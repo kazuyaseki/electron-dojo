@@ -1,0 +1,23 @@
+{
+  "name": "electron-dojo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazuyaseki/electron-dojo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kazuyaseki/electron-dojo/issues"
+  },
+  "homepage": "https://github.com/kazuyaseki/electron-dojo#readme",
+  "devDependencies": {
+    "electron": "^1.8.6"
+  }
+}
