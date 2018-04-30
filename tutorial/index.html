@@ -1,9 +1,22 @@
 <html>
 
 <head>
-  <title>Hello World!</title>
+  <title>Egghead Electron Course</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
-<h1>Hello World!</h1>
+<body>
+
+  <h1>
+    You are running Electron version:
+    <br />
+    <span id="version"></span>
+  </h1>
+
+  <script>
+    require('./renderer.js');
+  </script>
+
+</body>
 
 </html>
