@@ -1,34 +1,35 @@
-const { app, Menu } = require('electron');
-const isWindows = process.platform === 'win32';
+const { app, Menu, BrowserWindow } = require('electron');
+const { showMessage, showSaveDialog, showOpenDialog } = require('./dialogs');
 
 module.exports = {
   setMainMenu
 };
 
-function setMainMenu() {
+function setMainMenu(mainWindow) {
   const template = [
     {
-      label: isWindows ? 'File' : app.getName(),
+      label: app.getName(),
       submenu: [
         {
-          label: isWindows ? 'Exit' : `Quit ${app.getName()}`,
-          accelerator: isWindows ? null : 'CmdOrCtrl+Q',
+          label: 'Say Hello',
           click() {
-            app.quit();
+            showMessage(mainWindow);
           }
-        }
-      ]
-    },
-    {
-      label: 'Edit',
-      submenu: [
-        { role: 'undo' },
-        { role: 'redo' },
-        { type: 'separator' }, //just adds a line visually
-        { role: 'cut' },
-        { role: 'copy' },
-        { role: 'paste' },
-        { role: 'selectall' }
+        },
+        {
+          label: 'Save Memory Usage Info',
+          click() {
+            showSaveDialog(mainWindow);
+          }
+        },
+        {
+          label: 'Open File',
+          click() {
+            showOpenDialog(mainWindow);
+          }
+        },
+        { type: 'separator' },
+        { role: 'quit' }
       ]
     }
   ];
