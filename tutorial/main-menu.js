@@ -31,6 +31,32 @@ function setMainMenu(mainWindow) {
         { type: 'separator' },
         { role: 'quit' }
       ]
+    },
+    {
+      label: 'View',
+      submenu: [
+        {
+          label: 'Reload',
+          accelerator: 'Command+R',
+          click: function() {
+            mainWindow.restart();
+          }
+        },
+        {
+          label: 'Toggle Full Screen',
+          accelerator: 'Ctrl+Command+F',
+          click: function() {
+            mainWindow.setFullScreen(!mainWindow.isFullScreen());
+          }
+        },
+        {
+          label: 'Toggle Developer Tools',
+          accelerator: 'Alt+Command+I',
+          click: function() {
+            mainWindow.toggleDevTools();
+          }
+        }
+      ]
     }
   ];
   const menu = Menu.buildFromTemplate(template);
