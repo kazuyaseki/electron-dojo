@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron index.js"
+    "start": "electron index.js",
+    "package": "build"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/kazuyaseki/electron-dojo#readme",
   "devDependencies": {
-    "electron": "^1.8.6"
+    "electron": "^1.8.6",
+    "electron-builder": "^20.11.1"
+  },
+  "build": {
+    "appId": "com.seya.awesomeapp",
+    "files": "!build-asserts${/*}"
   }
 }
